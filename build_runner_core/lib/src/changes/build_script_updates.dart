@@ -3,7 +3,6 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:mirrors';
 
 import 'package:build/build.dart';
 import 'package:collection/collection.dart';
@@ -75,7 +74,7 @@ class _MirrorBuildScriptUpdates implements BuildScriptUpdates {
   }
 
   static Iterable<Uri> get _urisForThisScript =>
-      currentMirrorSystem().libraries.keys;
+      throw UnsupportedError('Mirrors are not supported on this platform.');
 
   /// Checks if the current running program has been updated, based on
   /// [updatedIds].
